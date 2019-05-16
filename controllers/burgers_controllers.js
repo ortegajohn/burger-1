@@ -8,7 +8,8 @@ var burger = require('../models/burgers.js');
 
 //============== INDEX.HTML ================//
 
-router.get('/burgers', function(req,res) {
+// router.get('/burgers', function(req,res) {
+	router.get('/', function(req,res) {
 	burger.all(function(data){
 		var hbsObject = {burgers : data}
 		console.log(hbsObject)
@@ -30,6 +31,12 @@ router.put('/burgers/update/:id', function(req,res) {
 	burger.update({'devoured' : req.body.devoured}, condition, function(data){
 		res.redirect('/burgers');
 	});
+
+
+
+
+
+
 });
 
 module.exports = router;
